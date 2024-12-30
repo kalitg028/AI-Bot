@@ -57,7 +57,6 @@ log - (admin only) Get log file from server
 broadcast - (admin only) Broadcast message to bot users
 stats - (admin only) check bots stats
 ```
-</b>
 </details>
 
 ### 🥳 CREDIT
