@@ -10,13 +10,12 @@
 
 <details><summary>Tap On Me For Bot Features</summary>
 
-- Add multiple audio tracks to a video
-- Add multiple subtitles tracks to a video
-- Merge Upto 10 videos at once
-- Log channel to store all files
-- Upload as document/video
-- Custom thumbnail support
-- Upload files to Drive
+- Work in groups as well as in PM
+- Different AI module available
+- Log channel to store all results
+- No need to use command while talking to AI in private
+- Broadcast available
+- Fsub available
 - Fully modified repo
 - Deploy To Koyeb + Heroku + Railway.
 - [Developer support](https://telegram.me/TechifySupport) 24x7
