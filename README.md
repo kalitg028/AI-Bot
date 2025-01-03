@@ -31,13 +31,14 @@
 - `BOT_TOKEN` : Get From [BotFather](https://youtu.be/aJILCCXfNVM)
 - `OWNER_ID` : Your Telegram User ID
 - `DATABASE_URL` : MongoDB URI get from [here](https://youtu.be/pMJpHoiu1go)
-- 
+- `LOG_CHANNEL` : Your Log channel ID.
+- `AUTH_CHANNEL` : Your FSUB channel ID.
+- `GOOGLE_API_KEY` : Your Gemini API.
 </details>
-</b>
 
 ### 😍 COMMANDS
 
-<b><details><summary>Tap On Me For Commands</summary>
+<details><summary>Tap On Me For Commands</summary>
 ```
 start - Start The Bot
 ask - Ask anything to AI
