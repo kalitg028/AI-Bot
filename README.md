@@ -44,18 +44,10 @@
 <b><details><summary>Tap On Me For Commands</summary>
 ```
 start - Start The Bot
-extract - Extract audios/subtitles from telegram media
-showthumbnail - Shows your thumbnail
-deletethumbnail - Delete your thumbnail
-settings - User Settings to manage different modes
-help - How to use Bot
-about - About the bot
-login - Access bot
-ban - (admin only) Ban any user
-unban - (admin only) Unban any user
-log - (admin only) Get log file from server
+ask - Ask anything to AI
+mode - Change the AI mode
 broadcast - (admin only) Broadcast message to bot users
-stats - (admin only) check bots stats
+users - (admin only) check bots users
 ```
 </details>
 
