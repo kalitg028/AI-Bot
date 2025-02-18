@@ -25,7 +25,7 @@ async def group_ai_reply(client, message):
 
     await handle_gemini_mode(client, message)
 
-@Client.on_message(filters.private & filters.text & ~filters.command(["start", "ask", "search"]))
+@Client.on_message(filters.private & filters.text & ~filters.command(["start", "ask"]))
 async def handle_ai_query(client, message):
     if FSUB and not await get_fsub(client, message):
         return
