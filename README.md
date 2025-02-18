@@ -11,7 +11,6 @@
 <details><summary>Tap On Me For Bot Features</summary>
 
 - Work in groups as well as in PM
-- Different AI module available
 - Log channel to store all results
 - No need to use command while talking to AI in private
 - Broadcast available
@@ -43,7 +42,6 @@
 ```
 start - Start The Bot
 ask - Ask anything to AI
-mode - Change the AI mode
 broadcast - (admin only) Broadcast message to bot users
 users - (admin only) check bots users
 ```
