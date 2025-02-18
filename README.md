@@ -39,14 +39,13 @@
 ### 😍 COMMANDS
 
 <details><summary>Tap On Me For Commands</summary>
-```
 
+```
 start - Start The Bot
 ask - Ask anything to AI
 mode - Change the AI mode
 broadcast - (admin only) Broadcast message to bot users
 users - (admin only) check bots users
-
 ```
 </details>
 
