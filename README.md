@@ -51,9 +51,7 @@ users - (admin only) check bots users
 
 <details><summary>Tap On Me For Credit</summary>
 
-
-
-💝 [TechifyBots](https://github.com/TechifyBots)
+ - [TechifyBots](https://github.com/TechifyBots)
 </details>
 
 ### 💕 CONTACT DEVELOPER
