@@ -29,7 +29,7 @@
 - `API_HASH` : Get From [Here](https://youtu.be/y5FwAobQ-Kc)
 - `BOT_TOKEN` : Get From [BotFather](https://youtu.be/aJILCCXfNVM)
 - `OWNER_ID` : Your Telegram User ID
-- `DATABASE_URL` : MongoDB URI get from [here](https://youtu.be/pMJpHoiu1go)
+- `DATABASE_URL` : MongoDB URI get from [here](https://youtu.be/j8LIuM7vv18)
 - `LOG_CHANNEL` : Your Log channel ID.
 - `AUTH_CHANNEL` : Your FSUB channel ID.
 - `GOOGLE_API_KEY` : Your Gemini API.
