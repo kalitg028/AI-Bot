@@ -32,7 +32,7 @@
 - `DATABASE_URL` : MongoDB URI get from [here](https://youtu.be/j8LIuM7vv18)
 - `LOG_CHANNEL` : Your Log channel ID.
 - `AUTH_CHANNEL` : Your FSUB channel ID.
-- `GOOGLE_API_KEY` : Your Gemini API.
+- `GOOGLE_API_KEY` : Your [Gemini API](https://youtube.com/shorts/M_HODruvqd0).
 </details>
 
 ### 😍 COMMANDS
