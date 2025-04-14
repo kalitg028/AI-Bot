@@ -28,10 +28,10 @@
 - `API_ID` : Get From [Here](https://youtu.be/y5FwAobQ-Kc)
 - `API_HASH` : Get From [Here](https://youtu.be/y5FwAobQ-Kc)
 - `BOT_TOKEN` : Get From [BotFather](https://youtu.be/aJILCCXfNVM)
-- `OWNER_ID` : Your Telegram User ID
-- `DATABASE_URL` : MongoDB URI get from [here](https://youtu.be/j8LIuM7vv18)
+- `ADMIN` : Your Telegram User ID
+- `DB_URI` : MongoDB Database get from [here](https://youtu.be/j8LIuM7vv18)
 - `LOG_CHANNEL` : Your Log channel ID.
-- `AUTH_CHANNEL` : Your FSUB channel ID.
+- `AUTH_CHANNELS` : Your FSUB channel ID.
 - `GOOGLE_API_KEY` : Your Gemini [API](https://youtube.com/shorts/M_HODruvqd0).
 </details>
 
@@ -49,10 +49,7 @@ users - (admin only) check bots users
 
 ### 🥳 CREDIT
 
-<details><summary>Tap On Me For Credit</summary>
-
  - [TechifyBots](https://github.com/TechifyBots)
-</details>
 
 ### 💕 CONTACT DEVELOPER
 
