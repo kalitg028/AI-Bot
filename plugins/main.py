@@ -3,6 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from config import *
 import google.generativeai as genai
+import asyncio
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -21,7 +22,6 @@ async def group_ai_reply(client, message):
             "⚠️ **Please provide a query after the command.**\n\nExample: `/ask What is AI?`",
             quote=True
         )
-
     await handle_gemini_mode(client, message)
 
 @Client.on_message(filters.private & filters.text & ~filters.command(["start", "ask"]))
@@ -65,12 +65,15 @@ async def handle_gemini_mode(client, message):
                     [[InlineKeyboardButton('Close', callback_data='close')]]
                 )
             )
-            await message.reply_text(
+            ai_message = await message.reply_text(
                 f"**{message.from_user.mention},** {response.text}",
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("ʟᴇᴀʀɴ ᴄᴏᴅɪɴɢ 👨‍💻", url="https://techifybots.blogspot.com")]]
                 )
             )
+            await asyncio.sleep(300)
+            await message.delete()
+            await ai_message.delete()
         else:
             await message.reply_text("⚠️ The AI model couldn't generate a response. Please try again.")
     except Exception as e:
