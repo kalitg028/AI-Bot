@@ -71,13 +71,17 @@ async def handle_gemini_mode(client, message):
                     [[InlineKeyboardButton("ʟᴇᴀʀɴ ᴄᴏᴅɪɴɢ 👨‍💻", url="https://techifybots.blogspot.com")]]
                 )
             )
-            await asyncio.sleep(300)
-            await message.delete()
-            await ai_message.delete()
+
+            # Delete the sticker immediately after the bot sends the message
+            await s.delete()
+
+            # Wait for 5 minutes before deleting both the user and bot messages
+            await asyncio.sleep(300)  # Sleep for 5 minutes (300 seconds)
+            await message.delete()  # Delete the user's message
+            await ai_message.delete()  # Delete the bot's reply
+
         else:
             await message.reply_text("⚠️ The AI model couldn't generate a response. Please try again.")
     except Exception as e:
         await message.reply_text("⚠️ An error occurred while processing your query. Please try again.")
         print(f"Error in Gemini Mode: {e}")
-    finally:
-        await s.delete()
