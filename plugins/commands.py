@@ -4,13 +4,13 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from config import *
 import asyncio
 from Script import text
-from .db import data
+from .db import tb
 from .fsub import get_fsub
 
 @Client.on_message(filters.command("start"))
 async def start_cmd(client, message):
-    if await data.get_user(message.from_user.id) is None:
-        await data.addUser(message.from_user.id, message.from_user.first_name)
+    if await tb.get_user(message.from_user.id) is None:
+        await tb.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(
             LOG_CHANNEL,
             text.LOG.format(message.from_user.mention, message.from_user.id)
@@ -28,8 +28,8 @@ async def start_cmd(client, message):
 @Client.on_message(filters.command("stats") & filters.private & filters.user(ADMIN))
 async def total_users(client, message):
     try:
-        users = await data.get_all_users()
-        active_today = await data.get_active_users_today()
+        users = await tb.get_all_users()
+        active_today = await tb.get_active_users_today()
         await message.reply(f"📊 **Bot Statistics**\n\n👥 **Total Users:** `{len(users)}`\n✅ **Active Today:** {active_today}\n📈 **Active Rate:** {(active_today/len(users)*100):.1f}%",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
     except Exception as e:
         r=await message.reply(f"❌ *Error:* `{str(e)}`")
@@ -46,7 +46,7 @@ async def broadcasting_func(client: Client, message: Message):
         completed = 0
         failed = 0
         to_copy_msg = message.reply_to_message
-        users_list = await data.get_all_users()
+        users_list = await tb.get_all_users()
         
         for i, userDoc in enumerate(users_list):
             if i % 20 == 0:
