@@ -9,13 +9,6 @@ Tap ‘Help’ below to explore all the features!
 
 <blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/TechifyRahul'>ʀᴀʜᴜʟ</a></blockquote></b>"""
 
-
-  FORCE_SUBSCRIBE = """<b>{},
-
-To use the bot, you must join our channel first. The bot will not process any requests without joining.
-
-बॉट का उपयोग करने के लिए आपको पहले हमारे चैनल में Join होना होगा। बॉट बिना शामिल हुए किसी भी Request को Process नहीं करेगा।"""
-
   LOG = """#New_User
 
 User: {}
