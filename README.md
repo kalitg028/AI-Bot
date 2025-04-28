@@ -53,7 +53,7 @@ stats - (admin only) check bots stats
 
 ### 😇 [SUPPORT](https://techifybots.github.io/PayWeb)
 
-### 🥳 [DEVELOPER](https://www.instagram.com/TechifyRahul)
+### 🥳 [DEVELOPER](https://instagram.com/TechifyRahul)
 
 ### 📌 NOTE
 
