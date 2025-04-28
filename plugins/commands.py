@@ -25,16 +25,18 @@ async def start_cmd(client, message):
         disable_web_page_preview=True
     )
 
-@Client.on_message(filters.command("users") & filters.user(ADMIN))
-async def total_users(client: Client, message: Message):
+@Client.on_message(filters.command("stats") & filters.private & filters.user(ADMIN))
+async def total_users(client, message):
     try:
-        total = await data.users.count_documents({})
-        await message.reply_text(f"📊 **Total Users:** `{total}`")
+        users = await data.get_all_users()
+        active_today = await data.get_active_users_today()
+        await message.reply(f"📊 **Bot Statistics**\n\n👥 **Total Users:** `{len(users)}`\n✅ **Active Today:** {active_today}\n📈 **Active Rate:** {(active_today/len(users)*100):.1f}%",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
     except Exception as e:
-        print(f"Error in /users command: {e}")
-        await message.reply_text("⚠️ An error occurred while fetching user count.")
+        r=await message.reply(f"❌ *Error:* `{str(e)}`")
+        await asyncio.sleep(30)
+        await r.delete()
 
-@Client.on_message(filters.command("broadcast") & (filters.private) & filters.user(ADMIN))
+@Client.on_message(filters.command("broadcast") & filters.private & filters.user(ADMIN))
 async def broadcasting_func(client: Client, message: Message):
     try:
         msg = await message.reply_text("Wait a second!")
