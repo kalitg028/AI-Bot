@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from config import *
+from .db import tb
 import google.generativeai as genai
 import asyncio
 
@@ -29,6 +30,7 @@ async def handle_ai_query(client, message):
     await handle_gemini_mode(client, message)
 
 async def handle_gemini_mode(client, message):
+    await tb.update_user_activity(message.from_user.id)
     user_input = message.text.strip()
     s = await message.reply_sticker("CAACAgQAAxkBAAIFqGc04PwJshM42NKq2lOFn-q5lQtqAAJuDwAC4eqxUNoxB5joJxGiHgQ")
 
