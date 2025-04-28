@@ -9,7 +9,8 @@ async def callback_query_handler(client, query: CallbackQuery):
             text.START.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"), InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help")],
+                [InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
+                 InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help")],
                 [InlineKeyboardButton("♻ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♻", url="https://telegram.me/TechifyRahul")]
             ])
         )
@@ -19,8 +20,10 @@ async def callback_query_handler(client, query: CallbackQuery):
             text.HELP,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("ᴜᴩᴅᴀᴛᴇꜱ", url="https://telegram.me/Techifybots"), InlineKeyboardButton("ꜱᴜᴩᴩᴏʀᴛ", url="https://telegram.me/TechifySupport")],
-                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"), InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")]
+                [InlineKeyboardButton("ᴜᴩᴅᴀᴛᴇꜱ", url="https://telegram.me/Techifybots"),
+                 InlineKeyboardButton("ꜱᴜᴩᴩᴏʀᴛ", url="https://telegram.me/TechifySupport")],
+                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"),
+                 InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")]
             ])
         )
 
@@ -29,8 +32,10 @@ async def callback_query_handler(client, query: CallbackQuery):
             text.ABOUT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("💥 ʀᴇᴘᴏ", url="https://github.com/TechifyBots/AI-Bot"), InlineKeyboardButton("👨‍💻 ᴏᴡɴᴇʀ", url="https://telegram.me/TechifyRahul")],
-                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"), InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")]
+                [InlineKeyboardButton("💥 ʀᴇᴘᴏ", url="https://github.com/TechifyBots/AI-Bot"),
+                 InlineKeyboardButton("👨‍💻 ᴏᴡɴᴇʀ", url="https://telegram.me/TechifyRahul")],
+                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"),
+                 InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")]
             ])
         )
 
