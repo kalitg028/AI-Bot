@@ -43,7 +43,7 @@
 start - Start The Bot
 ask - Ask anything to AI
 broadcast - (admin only) Broadcast message to bot users
-users - (admin only) check bots users
+stats - (admin only) check bots stats
 ```
 </details>
 
@@ -51,13 +51,9 @@ users - (admin only) check bots users
 
  - [TechifyBots](https://github.com/TechifyBots)
 
-### 💕 CONTACT DEVELOPER
+### 😇 [SUPPORT](https://techifybots.github.io/PayWeb)
 
-- [Rahul](https://telegram.me/TechifySupport)
-
-### ☕ BUY ME A COFFEE
-- [PayPal](https://paypal.me/TechifyBots)
-- [UPI](https://TechifyBots.github.io/Donate)
+### 🥳 [DEVELOPER](https://telegram.me/TechifySupport)
 
 ### 📌 NOTE
 
