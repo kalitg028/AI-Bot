@@ -5,12 +5,12 @@ from datetime import datetime, timedelta
 client: motor_asyncio.AsyncIOMotorClient[Any] = motor_asyncio.AsyncIOMotorClient(DB_URI)
 db = client[DB_NAME]
 
-class data:
+class Techifybots:
     def __init__(self):
         self.users = db["users"]
         self.cache : dict[int, dict[str, Any]] = {}
 
-    async def addUser(self, user_id: int, name: str) -> dict[str, Any] | None:
+    async def add_user(self, user_id: int, name: str) -> dict[str, Any] | None:
         try:
             user: dict[str, Any] = {"user_id": user_id, "name": name}
             await self.users.insert_one(user)
@@ -57,4 +57,4 @@ class data:
         except Exception as e:
             print("Error in update_user_activity: ", e)
 
-data = data()
+tb = Techifybots()
