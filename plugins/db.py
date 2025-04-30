@@ -1,7 +1,6 @@
 from typing import Any
 from config import DB_URI, DB_NAME
 from motor import motor_asyncio
-from datetime import datetime, timedelta
 client: motor_asyncio.AsyncIOMotorClient[Any] = motor_asyncio.AsyncIOMotorClient(DB_URI)
 db = client[DB_NAME]
 
