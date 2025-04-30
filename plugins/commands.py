@@ -30,8 +30,7 @@ async def start_cmd(client, message):
 async def total_users(client, message):
     try:
         users = await tb.get_all_users()
-        active_today = await tb.get_active_users_today()
-        await message.reply(f"📊 **Bot Statistics**\n\n👥 **Total Users:** `{len(users)}`\n✅ **Active Today:** {active_today}\n📈 **Active Rate:** {(active_today/len(users)*100):.1f}%",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
+        await message.reply(f"👥 **Total Users:** {users}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
     except Exception as e:
         r=await message.reply(f"❌ *Error:* `{str(e)}`")
         await asyncio.sleep(30)
