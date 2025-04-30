@@ -40,21 +40,4 @@ class Techifybots:
             print("Error in getAllUsers: ", e)
             return []
 
-    async def get_active_users_today(self) -> int:
-        try:
-            today = datetime.utcnow() - timedelta(days=1)
-            return await self.users.count_documents({"last_active": {"$gte": today}})
-        except Exception as e:
-            print("Error in get_active_users_today: ", e)
-            return 0
-
-    async def update_user_activity(self, user_id: int) -> None:
-        try:
-            await self.users.update_one(
-                {"user_id": user_id},
-                {"$set": {"last_active": datetime.utcnow()}}
-            )
-        except Exception as e:
-            print("Error in update_user_activity: ", e)
-
 tb = Techifybots()
