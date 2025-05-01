@@ -30,46 +30,8 @@ async def start_cmd(client, message):
 async def total_users(client, message):
     try:
         users = await tb.get_all_users()
-        await message.reply(f"👥 **Total Users:** {users}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
+        await message.reply(f"👥 **Total Users:** {len(users)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
     except Exception as e:
         r=await message.reply(f"❌ *Error:* `{str(e)}`")
         await asyncio.sleep(30)
         await r.delete()
-
-@Client.on_message(filters.command("broadcast") & filters.private & filters.user(ADMIN))
-async def broadcasting_func(client: Client, message: Message):
-    try:
-        msg = await message.reply_text("Wait a second!")
-        if not message.reply_to_message:
-            return await msg.edit("<b>Please reply to a message to broadcast.</b>")
-        await msg.edit("Processing ...")
-        completed = 0
-        failed = 0
-        to_copy_msg = message.reply_to_message
-        users_list = await tb.get_all_users()
-        
-        for i, userDoc in enumerate(users_list):
-            if i % 20 == 0:
-                await msg.edit(f"Total: {i}\nCompleted: {completed}\nFailed: {failed}")
-            user_id = userDoc.get("user_id")
-            if not user_id:
-                continue
-            try:
-                await to_copy_msg.copy(int(user_id))
-                completed += 1
-                await asyncio.sleep(0.1)
-            except FloodWait as e:
-                await asyncio.sleep(e.value)
-                try:
-                    await to_copy_msg.copy(int(user_id))
-                    completed += 1
-                except Exception:
-                    failed += 1
-            except Exception as e:
-                print(f"Error in broadcasting to {user_id}: {e}")
-                failed += 1
-                
-        await msg.edit(f"Successfully Broadcasted\nTotal: {len(users_list)}\nCompleted: {completed}\nFailed: {failed}")
-    except Exception as e:
-        print(f"Error in broadcast: {e}")
-        await message.reply_text("An error occurred while broadcasting.")
