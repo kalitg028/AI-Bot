@@ -2,7 +2,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from config import *
-from .db import tb
 import google.generativeai as genai
 import asyncio
 
@@ -15,7 +14,6 @@ async def askcmd(client, message):
     await message.reply_text(
         text="**You don't need to use this command here. Ask me directly.\n\nEx:** `Who Is Lord Shiva?`\n**Ok ?? Let's Try 😏**"
     )
-    await tb.update_user_activity(message.from_user.id)
 
 @Client.on_message(filters.command("ask") & filters.group)
 async def group_ai_reply(client, message):
@@ -24,7 +22,6 @@ async def group_ai_reply(client, message):
             "⚠️ **Please provide a query after the command.**\n\nExample: `/ask What is AI?`",
             quote=True
         )
-    await tb.update_user_activity(message.from_user.id)
     await handle_gemini_mode(client, message)
 
 @Client.on_message(filters.private & filters.text & ~filters.command(["start", "ask"]))
