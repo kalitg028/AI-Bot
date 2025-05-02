@@ -42,7 +42,7 @@ class Bot(Client):
         await super().start()
         me = await self.get_me()
         self.username = '@' + me.username
-        print(f'Bot Started Powered By @{self.username}')
+        print(f'Bot Started Powered By {self.username}')
 
     async def stop(self, *args):
         await super().stop()
