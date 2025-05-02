@@ -3,6 +3,7 @@ tgcrypto
 motor
 requests 
 google-generativeai
+aiohttp
 
 # For Web Deployable
 Flask==1.1.2
