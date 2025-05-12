@@ -47,6 +47,10 @@ stats - (admin only) check bots stats
 ```
 </details>
 
+### 👀 IMP
+
+If you are facing any issue while using the bot even after entering the correct API then change the model name in repo. Get the free models from [here](https://ai.google.dev/gemini-api/docs/rate-limits)
+
 ### 🥳 CREDIT
 
  - [TechifyBots](https://github.com/TechifyBots)
