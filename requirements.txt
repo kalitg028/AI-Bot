@@ -4,6 +4,7 @@ motor
 requests 
 google-generativeai
 aiohttp
+pytz
 
 # For Web Deployable
 Flask
