@@ -1,12 +1,10 @@
 from pyrogram import Client, filters
-from pyrogram.errors import *
-from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-from config import *
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import FloodWait, UserIsBlocked, PeerIdInvalid, InputUserDeactivated
 import asyncio
 import re
-from Script import text
+from config import ADMIN
 from .db import tb
-from .fsub import get_fsub
 
 def parse_button_markup(text: str):
     lines = text.split("\n")
@@ -28,32 +26,6 @@ def parse_button_markup(text: str):
         else:
             final_text_lines.append(line)
     return InlineKeyboardMarkup(buttons) if buttons else None, "\n".join(final_text_lines).strip()
-
-@Client.on_message(filters.command("start"))
-async def start_cmd(client, message):
-    if await tb.get_user(message.from_user.id) is None:
-        await tb.add_user(message.from_user.id, message.from_user.first_name)
-        bot = await client.get_me()
-        await client.send_message(
-            LOG_CHANNEL,
-            text.LOG.format(
-                message.from_user.id,
-                getattr(message.from_user, "dc_id", "N/A"),
-                message.from_user.first_name or "N/A",
-                f"@{message.from_user.username}" if message.from_user.username else "N/A",
-                bot.username
-            )
-        )
-    if IS_FSUB and not await get_fsub(client, message):return
-    await message.reply_photo(
-        photo=random.choice(PICS),
-        caption=text.START.format(message.from_user.mention),
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton('ℹ️ 𝖠𝖻𝗈𝗎𝗍', callback_data='about'),
-             InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', callback_data='help')],
-            [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(ADMIN))]
-        ])
-    )
 
 @Client.on_message(filters.command("stats") & filters.private & filters.user(ADMIN))
 async def total_users(client, message):
