@@ -5,6 +5,8 @@ import random
 from config import *
 import google.generativeai as genai
 import asyncio
+from .db import tb
+from .fsub import get_fsub
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
