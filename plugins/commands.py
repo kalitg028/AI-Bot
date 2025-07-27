@@ -29,7 +29,6 @@ def parse_button_markup(text: str):
             final_text_lines.append(line)
     return InlineKeyboardMarkup(buttons) if buttons else None, "\n".join(final_text_lines).strip()
 
-
 @Client.on_message(filters.command("start"))
 async def start_cmd(client, message):
     if await tb.get_user(message.from_user.id) is None:
@@ -47,13 +46,13 @@ async def start_cmd(client, message):
         )
     if IS_FSUB and not await get_fsub(client, message):return
     await message.reply_photo(
-        text.START.format(message.from_user.mention),
+        photo=random.choice(PICS),
+        caption=text.START.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
              InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help')],
             [InlineKeyboardButton('♻ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♻', user_id=int(ADMIN))]
-        ]),
-        disable_web_page_preview=True
+        ])
     )
 
 @Client.on_message(filters.command("stats") & filters.private & filters.user(ADMIN))
