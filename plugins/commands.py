@@ -59,7 +59,7 @@ async def start_cmd(client, message):
 async def total_users(client, message):
     try:
         users = await tb.get_all_users()
-        await message.reply(f"👥 **Total Users:** {len(users)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]]))
+        await message.reply(f"👥 **Total Users:** {len(users)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🎭 Close', callback_data='close')]]))
     except Exception as e:
         r=await message.reply(f"❌ *Error:* `{str(e)}`")
         await asyncio.sleep(30)
@@ -109,5 +109,5 @@ async def broadcasting_func(client: Client, message: Message):
         await asyncio.sleep(0.1)
     await msg.edit(
         f"😶‍🌫 <b>Broadcast Completed</b>\n\n👥 Total Users: <code>{len(users_list)}</code>\n✅ Successful: <code>{completed}</code>\n🤯 Failed: <code>{failed}</code>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎭 Close", callback_data="close")]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('🎭 𝖢𝗅𝗈𝗌𝖾', callback_data='close')]])
     )
