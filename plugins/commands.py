@@ -33,9 +33,9 @@ async def start_cmd(client, message):
         photo=random.choice(PICS),
         caption=text.START.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton('ℹ️ 𝖠𝖻𝗈𝗎𝗍', callback_data='about'),
-             InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', callback_data='help')],
-            [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(ADMIN))]
+            [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
+             InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")],
+            [InlineKeyboardButton("👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻", user_id=int(ADMIN))]
         ])
     )
 
@@ -86,7 +86,7 @@ async def handle_gemini_mode(client, message):
                 text=f"👤 {message.from_user.mention} (`{message.from_user.id}`)\n\n"
                      f"**Query:** `{user_input}`\n\n**AI Generated Response (Gemini):**\n{response.text}",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton('Close', callback_data='close')]]
+                    [[InlineKeyboardButton("Close", callback_data="close")]]
                 )
             )
             ai_message = await message.reply_text(
