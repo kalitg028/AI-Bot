@@ -34,12 +34,19 @@ def parse_button_markup(text: str):
 async def start_cmd(client, message):
     if await tb.get_user(message.from_user.id) is None:
         await tb.add_user(message.from_user.id, message.from_user.first_name)
+        bot = await client.get_me()
         await client.send_message(
             LOG_CHANNEL,
-            text.LOG.format(message.from_user.mention, message.from_user.id)
+            text.LOG.format(
+                message.from_user.id,
+                getattr(message.from_user, "dc_id", "N/A"),
+                message.from_user.first_name or "N/A",
+                f"@{message.from_user.username}" if message.from_user.username else "N/A",
+                bot.username
+            )
         )
     if IS_FSUB and not await get_fsub(client, message):return
-    await message.reply_text(
+    await message.reply_photo(
         text.START.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
