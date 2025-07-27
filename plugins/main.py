@@ -7,6 +7,7 @@ import google.generativeai as genai
 import asyncio
 from .db import tb
 from .fsub import get_fsub
+from Script import text
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
