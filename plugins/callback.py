@@ -6,9 +6,8 @@ from config import ADMIN
 @Client.on_callback_query()
 async def callback_query_handler(client, query: CallbackQuery):
     if query.data == "start":
-        await query.message.edit_text(
-            text.START.format(query.from_user.mention),
-            disable_web_page_preview=True,
+        await query.message.edit_caption(
+            caption=text.START.format(query.from_user.mention),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
                  InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help")],
@@ -17,9 +16,8 @@ async def callback_query_handler(client, query: CallbackQuery):
         )
 
     elif query.data == "help":
-        await query.message.edit_text(
-            text.HELP,
-            disable_web_page_preview=True,
+        await query.message.edit_caption(
+            caption=text.HELP,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("ᴜᴩᴅᴀᴛᴇꜱ", url="https://telegram.me/Techifybots"),
                  InlineKeyboardButton("ꜱᴜᴩᴩᴏʀᴛ", url="https://telegram.me/TechifySupport")],
@@ -29,9 +27,8 @@ async def callback_query_handler(client, query: CallbackQuery):
         )
 
     elif query.data == "about":
-        await query.message.edit_text(
-            text.ABOUT,
-            disable_web_page_preview=True,
+        await query.message.edit_caption(
+            caption=text.ABOUT,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("💥 ʀᴇᴘᴏ", url="https://github.com/TechifyBots/AI-Bot"),
                  InlineKeyboardButton("👨‍💻 ᴏᴡɴᴇʀ", user_id=int(ADMIN))],
