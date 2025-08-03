@@ -30,7 +30,7 @@ async def start_cmd(client, message):
         )
     if IS_FSUB and not await get_fsub(client, message):return
     await message.reply_photo(
-        photo=random.choice(PICS),
+       # photo=random.choice(PICS),
         caption=text.START.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
