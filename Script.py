@@ -1,5 +1,5 @@
 class text(object):
-  START = """<b>{},
+  START = """<b>Hi {},❤️
 
 Welcome to AI Bot – Your Smart Virtual Assistant!
 
@@ -7,7 +7,7 @@ I'm here to assist you with anything you need – from answering questions to so
 
 Tap ‘Help’ below to explore all the features!
 
-<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/TechifyRahul'>ʀᴀʜᴜʟ</a></blockquote></b>"""
+<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : @Indian_MV</blockquote></b>"""
 
   LOG = """👁️‍🗨️ 𝘜𝘚𝘌𝘙 𝘋𝘌𝘛𝘈𝘐𝘓𝘚
 
@@ -18,12 +18,12 @@ Tap ‘Help’ below to explore all the features!
 
 𝘉𝘺 = @{}"""
   
-  ABOUT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href='https://youtube.com/@techifybots'>ᴀɪ ʙᴏᴛ</a>
+  ABOUT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href='https://t.me/Gemini_AI_MV_Bot'>ᴀɪ ʙᴏᴛ</a>
 ‣ ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a> 
 ‣ ᴅᴀᴛᴀʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏᴅʙ</a>
 ‣ ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
 ‣ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://www.koyeb.com/'>ᴋᴏʏᴇʙ</a>
-‣ ᴄʀᴇᴀᴛᴇᴅ ʙʏ : <a href='https://telegram.me/callownerbot'>ʀᴀʜᴜʟ</a></b>"""
+‣ ᴄʀᴇᴀᴛᴇᴅ ʙʏ : <a href='https://t.me/Indian_MV_Admin_Bot'>Owner</a></b>"""
 
   
   HELP = """<b>✨ --ᴜsᴇs ᴏꜰ ᴄᴏᴍᴍᴀɴᴅs--
