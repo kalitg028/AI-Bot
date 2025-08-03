@@ -5,7 +5,7 @@ API_ID = os.environ.get("API_ID", "")
 API_HASH = os.environ.get("API_HASH", "")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 ADMIN = int(os.environ.get("ADMIN", ""))
-#PICS = (os.environ.get("PICS", "https://envs.sh/az.jpg")#.split()) # Add Multiple Images
+PICS = (os.environ.get("PICS", "https://envs.sh/az.jpg"))#.split()) # Add Multiple Images
 
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001738045764"))
 
