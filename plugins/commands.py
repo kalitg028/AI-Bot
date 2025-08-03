@@ -35,7 +35,7 @@ async def start_cmd(client, message):
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
              InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")],
-            [InlineKeyboardButton("👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻", user_id=int(ADMIN))]
+            [InlineKeyboardButton("🎥 Movie Group 📥", url="https://t.me/Movies_Request_MV")]
         ])
     )
 
@@ -59,7 +59,7 @@ async def handle_ai_query(client, message):
 
 async def handle_gemini_mode(client, message):
     user_input = message.text.strip()
-    s = await message.reply_sticker("CAACAgQAAxkBAAIFqGc04PwJshM42NKq2lOFn-q5lQtqAAJuDwAC4eqxUNoxB5joJxGiHgQ")
+    s = await message.reply_sticker("CAACAgUAAxkBAAEPETZoj0A_jpPk7n0oCECN0fXQcQpQxgAC2QUAAgmmqFQjFkBaOSI-wDYE")
     generation_config = {
         "temperature": 0.9,
         "top_p": 1,
@@ -92,7 +92,7 @@ async def handle_gemini_mode(client, message):
             ai_message = await message.reply_text(
                 f"**{message.from_user.mention},** {response.text}",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("ʟᴇᴀʀɴ ᴄᴏᴅɪɴɢ 👨‍💻", url="https://techifybots.blogspot.com")]]
+                    [[InlineKeyboardButton("📢 𝖴𝗉𝖽𝖺𝗍𝖾𝗌", url="https://t.me/Indian_MV")]]
                 )
             )
             await s.delete()
