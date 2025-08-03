@@ -13,6 +13,6 @@ DB_URI = os.environ.get("DB_URI", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 
 IS_FSUB = os.environ.get("IS_FSUB", "true").lower() == "true"  # Set "True" For Enable Force Subscribe
-AUTH_CHANNELS = list(map(int, os.environ.get("AUTH_CHANNEL", "-1002327045567").split()))  # Add Multiple channel id
+AUTH_CHANNELS = list(map(int, os.environ.get("AUTH_CHANNEL", "-1002327045567 -1002698964455").split()))  # Add Multiple channel id
 
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
